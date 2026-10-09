@@ -1,0 +1,33 @@
+.effect-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.effect-overlay.explosion {
+  background: radial-gradient(circle, rgba(255, 87, 34, 0.4) 0%, transparent 70%);
+  animation: explodeFlash 0.5s ease-out;
+}
+
+.explosion-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFEB3B;
+  text-shadow: 0 0 20px #FF5722, 0 0 40px #FF5722;
+  animation: boomScale 0.6s ease-out;
+}
+
+@keyframes explodeFlash {
+  0% { background: rgba(255, 255, 255, 0.8); }
+  100% { background: radial-gradient(circle, rgba(255, 87, 34, 0.4) 0%, transparent 70%); }
+}
+
+@keyframes boomScale {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
